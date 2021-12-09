@@ -1,0 +1,115 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+	background: #E9ECF4;
+	color: #000;
+	font-family: 'Roboto', sans-serif;
+}
+
+
+.wholepage {
+  width: 100%;
+  max-width: 1000px;
+  margin: 20px auto;
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(4, auto);
+
+  grid-template-areas: 
+  "header header header"
+  "contenido contenido sidebar"
+  "widget-1 widget-2 sidebar"
+  "footer footer footer";
+  
+}
+
+.wholepage > div,
+.wholepage .header,
+.wholepage .contenido,
+.wholepage .sidebar,
+.wholepage .footer {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 4px;
+}
+
+.wholepage .header{
+    background-color: blue;
+    color: white;
+    grid-area: header;
+    
+}
+
+.wholepage .contenido {
+
+  grid-area: contenido;
+
+ /* this is another way to do it 
+ grid-column: span 2; */
+  
+
+}
+
+.wholepage .sidebar {
+  
+  grid-area: sidebar;
+  background-color: coral;
+  min-height: 100px;
+
+  /* flexbox */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wholepage .widget-1,
+.wholepage .widget-2 {
+  
+  background-color: #55a8fd;
+  color: #E9ECF4;
+  height: 100px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wholepage .widget-1 {
+
+  grid-area: widget-1;
+
+}
+
+.wholepage .widget-2 {
+
+  grid-area: widget-2;
+
+}
+
+.wholepage .footer {
+  background-color: #12203e;
+  color: #fff;
+  grid-area: footer;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media screen and (max-width: 768px) {
+  
+  .wholepage {
+     
+    grid-template-areas: 
+    "header header header"
+    "contenido contenido contenido"
+    "sidebar sidebar sidebar"
+    "widget-1 widget-1 widget-2"
+    "footer footer footer";
+  
+  }
+}
